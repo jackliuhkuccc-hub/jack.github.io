@@ -45,13 +45,6 @@
             border-bottom: 2px solid #004080;
         }
 
-        .hover_card:hover {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transform: translateY(-2px);
-            transition: all 0.2s;
-            cursor: pointer;
-        }
-
         .nav {
             margin: 0 auto;
             padding-top: 0.5rem;
@@ -421,16 +414,24 @@
         }
 
         .alert-content h4 {
-            font-size: 1rem;
+            font-size: 1.125rem;
             font-weight: 600;
             color: #78350f;
             margin: 0 0 0.75rem 0;
         }
 
         .enrollment-dates div {
-            font-size: 0.875rem;
+            font-size: 1rem;
             color: #92400e;
             margin-bottom: 0.5rem;
+        }
+
+        .enrollment-dates ul {
+            font-size: 1rem;
+        }
+
+        .enrollment-dates ul li {
+            font-size: 1rem;
         }
 
         .enrollment-dates div:last-child {
@@ -740,6 +741,157 @@
         .clo-list li strong {
             color: var(--hku-blue);
             font-weight: 600;
+        }
+
+        /* Academic Integrity Section Styles */
+        .academic-integrity-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 2px solid #f59e0b;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 12px rgba(245, 158, 11, 0.15);
+        }
+
+        .academic-integrity-section h4 {
+            color: #92400e;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .academic-integrity-intro {
+            color: #78350f;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .misconduct-list {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .misconduct-list h5 {
+            color: #92400e;
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+        }
+
+        .misconduct-list ol {
+            margin: 0;
+            padding-left: 1.5rem;
+            counter-reset: misconduct-counter;
+            list-style: none;
+        }
+
+        .misconduct-list ol li {
+            counter-increment: misconduct-counter;
+            position: relative;
+            padding-left: 0.5rem;
+            margin-bottom: 1rem;
+            color: #451a03;
+            line-height: 1.6;
+        }
+
+        .misconduct-list ol li:last-child {
+            margin-bottom: 0;
+        }
+
+        .misconduct-list ol li::before {
+            content: counter(misconduct-counter) ".";
+            position: absolute;
+            left: -1.5rem;
+            font-weight: 700;
+            color: #f59e0b;
+        }
+
+        .misconduct-list ol li strong {
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        .consequences-box {
+            background: #fef2f2;
+            border: 2px solid #ef4444;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .consequences-box h5 {
+            color: #991b1b;
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .consequences-box p {
+            color: #7f1d1d;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .consequences-box strong {
+            font-weight: 700;
+            color: #991b1b;
+        }
+
+        @media (max-width: 768px) {
+            .academic-integrity-section {
+                padding: 1.5rem;
+            }
+
+            .academic-integrity-section h4 {
+                font-size: 1.1rem;
+            }
+
+            .misconduct-list,
+            .consequences-box {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .academic-integrity-section {
+                padding: 1rem;
+            }
+
+            .academic-integrity-section h4 {
+                font-size: 1rem;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .academic-integrity-intro {
+                font-size: 0.95rem;
+            }
+
+            .misconduct-list,
+            .consequences-box {
+                padding: 1rem;
+            }
+
+            .misconduct-list h5,
+            .consequences-box h5 {
+                font-size: 1rem;
+            }
+
+            .misconduct-list ol li {
+                font-size: 0.95rem;
+            }
         }
 
         /* Support Section Styles */
@@ -1166,15 +1318,15 @@
             
             /* Carousel dots touch-friendly */
             .carousel-dot {
-                min-width: 32px;
-                min-height: 32px;
+                min-width: 24px;
+                min-height: 24px;
                 border-radius: 16px;
                 width: 12px;
                 height: 12px;
             }
             
             .carousel-dot.active {
-                width: 32px;
+                width: 24px;
                 border-radius: 16px;
             }
             
@@ -1605,19 +1757,19 @@
                         <h3 style="margin:0;">Course Objectives</h3>
                     </div>
                     <div style="display:grid; gap:0.75rem;">
-                        <div class="hover_card" style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
+                        <div style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
                             <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#f0e6ff; color:#7c3aed; font-weight:700;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path><path d="M20 3v4"></path><path d="M22 5h-4"></path><path d="M4 17v2"></path><path d="M5 18H3"></path></svg>
                             </span>
                             <span style="color:#4b5563;">Introduce students to fundamental concepts and principles of AI.</span>
                         </div>
-                        <div class="hover_card" style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
+                        <div style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
                             <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#f0e6ff; color:#7c3aed; font-weight:700;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
                             </span>
                             <span style="color:#4b5563;">Help students develop the ability to interact with AI systems effectively.</span>
                         </div>
-                        <div class="hover_card" style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
+                        <div style="display:flex; align-items:center; gap:0.75rem; background:#f6f1ff; border-radius:10px; padding:0.9rem 1rem;">
                             <span style="display:inline-flex; align-items:center; justify-content:center; width:40px; height:40px; border-radius:10px; background:#f0e6ff; color:#7c3aed; font-weight:700;">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect><path d="m7 11-2-2-2 2"></path><path d="M11 11V7a4 4 0 0 1 8 0v4"></path></svg>
                             </span>
@@ -1686,15 +1838,15 @@
                     <div class="tutorial-enrollment-alert">
                         <div class="alert-content">
                             <h4>Tutorial Enrollment Period</h4>
-                            <p style="margin-bottom: 0.5rem; font-style: italic; color: #92400e; font-size: 0.875rem;">All slots are allocated on a first-come, first-served basis.</p>
+                            <p style="margin-bottom: 0.5rem; font-style: italic; color: #92400e; font-size: 1rem;">All slots are allocated on a first-come, first-served basis.</p>
                             <div class="enrollment-dates">
                                 <div><strong>Semester 1:</strong></div>
-                                <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0; color: #92400e; font-size: 0.875rem;">
+                                <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0; color: #92400e; font-size: 1rem;">
                                     <li style="margin-bottom: 0.25rem;"><strong>Regular Enrollment:</strong> September 1 – 5, 2025 (10:00 AM – 11:59 PM HKT)</li>
                                     <li style="margin-bottom: 0.5rem;"><strong>Late Enrollment:</strong> September 9 – 12, 2025 (10:00 AM – 4:00 PM HKT)</li>
                                 </ul>
                                 <div><strong>Semester 2:</strong></div>
-                                <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0; color: #92400e; font-size: 0.875rem;">
+                                <ul style="margin: 0.5rem 0 1rem 1.5rem; padding: 0; color: #92400e; font-size: 1rem;">
                                     <li style="margin-bottom: 0.25rem;"><strong>Regular Enrollment:</strong> January 19 – 23, 2026 (10:00 AM – 11:59 PM HKT)</li>
                                     <li style="margin-bottom: 0.5rem;"><strong>Late Enrollment:</strong> January 27 – 30, 2026 (10:00 AM – 4:00 PM HKT)</li>
                                 </ul>
@@ -1824,8 +1976,8 @@
                         </p>
                     </div>
 
-                    <div class="special-notice" style="background-color:#f6c9c9;">
-                        <p style="color:rgb(124, 10, 10);">#More details of <i><strong>AILT1001-SX</strong></i> will be announced in due course.
+                    <div class="special-notice" style="background-color:#f1f5df;">
+                        <p style="color:#565e05;">#More details of <i><strong>AILT1001-SX</strong></i> will be announced in due course.
                             <br><br>#<i><strong>AILT1001-SX</strong></i> is mutually exclusive with other subclasses of <i><strong>AILT1001</strong></i>.</p>
                     </div>
 
@@ -1912,7 +2064,7 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <div class="detail-content">
-                                <h4>Tutorial Participation</h4>
+                                <h4>Tutorial Participation (10%)</h4>
                                 <p>Attendance and participation in tutorials is required.</p>
                             </div>
                         </div>
@@ -1922,7 +2074,7 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <div class="detail-content">
-                                <h4>Online Learning Activities</h4>
+                                <h4>Online Learning Activities (10%)</h4>
                                 <p>After each lecture, complete the checkpoint exercise on the Ed platform.</p>
                             </div>
                         </div>
@@ -1932,7 +2084,7 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <div class="detail-content">
-                                <h4>Group Assignment</h4>
+                                <h4>Group Assignment (40%)</h4>
                                 <p>Students will be randomly assigned in groups in their tutorial subclass to create an educational poster on an AI-related topic.</p>
                             </div>
                         </div>
@@ -1942,16 +2094,61 @@
                                 <polyline points="20 6 9 17 4 12"></polyline>
                             </svg>
                             <div class="detail-content">
-                                <h4>Final Test</h4>
+                                <h4>Final Test (40%)</h4>
                                 <p>Held during lecture time, covering content from the whole course.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="policy-section-assessment">
-                        <h4>Plagiarism Policy</h4>
-                        <p>All students must uphold academic honesty. Plagiarism is a serious offence and is subject to disciplinary action.</p>
-                        <p>Please review the <a href="https://tl.hku.hk/plagiarism/how-to-avoid-plagiarism/" class="visit-link" target="_blank">University's Plagiarism Policy</a>.</p>
+                        <div class="academic-integrity-section">
+                            <h4>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"></path>
+                                    <path d="m9 12 2 2 4-4"></path>
+                                </svg>
+                                Academic Integrity and Misconduct Policy (AILT1001)
+                            </h4>
+                            
+                            <p class="academic-integrity-intro">
+                                Academic honesty is fundamental to teaching, learning, and assessment in AILT1001, and all students are required to uphold the highest standards of integrity in all submitted work.
+                            </p>
+
+                            <div class="misconduct-list">
+                                <h5>Academic misconduct includes, but is not limited to:</h5>
+                                <ol>
+                                    <li>
+                                        <strong>Plagiarism:</strong> Submitting another person's work, in whole or in part, as one's own without proper acknowledgment.
+                                    </li>
+                                    <li>
+                                        <strong>Cheating:</strong> Such as copying or sharing answers, using unauthorized notes, online search engines, or AI tools including ChatGPT or Copilot in quizzes, tests, or other assessments without explicit permission.
+                                    </li>
+                                    <li>
+                                        <strong>Assisting others to act dishonestly</strong>
+                                    </li>
+                                    <li>
+                                        <strong>Falsification, fabrication, or manipulation of data or results</strong>
+                                    </li>
+                                </ol>
+                                <p style="margin-top: 1rem; color: #78350f; font-style: italic; font-size: 0.95rem;">
+                                    These rules apply to all forms of assessment, including assignments, projects, and in-class or online tests.
+                                </p>
+                            </div>
+
+                            <div class="consequences-box">
+                                <h5>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                        <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"></path>
+                                        <path d="M12 9v4"></path>
+                                        <path d="M12 17h.01"></path>
+                                    </svg>
+                                    Consequences of Academic Misconduct
+                                </h5>
+                                <p>
+                                    Any student found to have committed academic misconduct may <strong>receive a failing grade</strong> for the affected assessment or the course, be <strong>formally reported</strong> to the School and their home Faculty, and have a <strong>permanent record placed on file</strong>. Serious or repeated cases will be referred to the Vice-Chancellor for consideration by the University Disciplinary Committee, where penalties may include a <strong>published reprimand, suspension, or expulsion</strong>.
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="policy-section-assessment">
